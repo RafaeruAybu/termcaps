@@ -1,6 +1,7 @@
 #include <stdio.h>		//simple output
 #include <sys/ioctl.h>	//termcaps
 #include <signal.h>		//to get signals
+#include <unistd.h>		//for sleep()
 #include "tc.h"			//some defines(colors etc...)
 
 /*
@@ -39,10 +40,11 @@ void draw_the_buff()
 
 int main()
 {
-		
+	draw_the_buff();
+	signal(SIGWINCH, &draw_the_buff);
 	while (1)
 	{
-		signal(SIGWINCH, &draw_the_buff);
+		sleep(1);
 	}
 	return 0;
 }
