@@ -1,5 +1,5 @@
 #include <stdio.h>		//simple output
-#include <sys/ioctl.h>	//termcaps
+#include <sys/ioctl.h>	//to use defines for io
 #include <signal.h>		//to get signals
 #include <unistd.h>		//for sleep()
 #include "tc.h"			//some defines(colors etc...)
